@@ -1,6 +1,6 @@
 error_codes = {
-	## -- todo
-	'01x001': 'Invalid version.',
+    ## -- todo
+    '01x001': 'Invalid version.',
     '01x002': 'User not found.',
     '01x003': 'Error validating user_id.',
     '01x004': 'Invalid Request: user_id must be a valid UUID.',
@@ -31,7 +31,7 @@ error_codes = {
 
 
 def get_error(error_key, **kwargs):
-	'''
-		Helper function that returns error codes in a common format.
-	'''
-	return {error_key: error_codes.get(error_key, '').format(**kwargs)}
+    '''
+        Helper function that returns error codes in a common format.
+    '''
+    return {error_key: error_codes.get(error_key, '').format(**kwargs)}
