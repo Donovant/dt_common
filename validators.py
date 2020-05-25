@@ -15,6 +15,9 @@ from werkzeug.routing import BaseConverter
 from werkzeug.utils import validate_arguments
 from uuid import UUID
 
+# user-defined imports
+from common.error_handling import get_error
+
 
 class VersionConverter(BaseConverter):
 
@@ -28,6 +31,6 @@ class VersionConverter(BaseConverter):
             return value
         except AssertionError:
             # TODO: use error dict calling module.
-            error = {'version': 'Invalid version.'}
-            abort(400, json.dumps(error))
+            error = get_error('01x001')
+            abort(400, error)
 
